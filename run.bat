@@ -41,7 +41,7 @@ echo [OK] Backend dependencies verified.
 
 :: 3. Start Backend in separate window
 echo.
-echo [1/2] Starting FastAPI Backend on http://127.0.0.1:8000 ...
+echo [1/2] Starting FastAPI Backend on http://https://dev-mini-project.onrender.com ...
 start "NIRF Backend (FastAPI)" cmd /k "cd /d "%~dp0backend" && "%PYTHON_EXE%" -m uvicorn main:app --reload --reload-dir "%~dp0backend" --host 127.0.0.1 --port 8000"
 
 :: 4. Start Frontend in separate window
@@ -52,7 +52,7 @@ start "NIRF Frontend (Vite)" cmd /k "cd /d "%~dp0frontend" && npm run dev"
 :: 5. Wait for backend health check
 echo.
 echo Waiting for backend to become ready...
-powershell -NoProfile -Command "for ($i=0; $i -lt 15; $i++) { try { $res = Invoke-RestMethod -Uri 'http://127.0.0.1:8000/api/health' -TimeoutSec 1; if ($res.status -eq 'ok') { Write-Host '[OK] Backend is healthy!'; break } } catch { Start-Sleep -Milliseconds 1000 } }"
+powershell -NoProfile -Command "for ($i=0; $i -lt 15; $i++) { try { $res = Invoke-RestMethod -Uri 'http://https://dev-mini-project.onrender.com/api/health' -TimeoutSec 1; if ($res.status -eq 'ok') { Write-Host '[OK] Backend is healthy!'; break } } catch { Start-Sleep -Milliseconds 1000 } }"
 
 :: 6. Open Browser
 echo.
@@ -63,8 +63,8 @@ echo.
 echo ======================================================================
 echo   Dashboard is running!
 echo   Frontend:  http://localhost:5173
-echo   Backend:   http://127.0.0.1:8000
-echo   API Docs:  http://127.0.0.1:8000/docs
+echo   Backend:   http://https://dev-mini-project.onrender.com
+echo   API Docs:  http://https://dev-mini-project.onrender.com/docs
 echo ======================================================================
 echo   Keep the terminal windows open while using the application.
 echo.

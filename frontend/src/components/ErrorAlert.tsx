@@ -15,7 +15,7 @@ export const ErrorAlert: React.FC<ErrorAlertProps> = ({ message, onRetry }) => {
           <h3 className="font-semibold text-sm text-red-900">Backend Communication Error</h3>
           <p className="text-xs text-red-700 mt-0.5">{message}</p>
           <p className="text-[11px] text-red-600/90 mt-1">
-            Ensure the FastAPI server is running on <code className="bg-red-100 px-1 py-0.5 rounded font-mono">http://127.0.0.1:8000</code>.
+            Ensure the FastAPI server is running on <code className="bg-red-100 px-1 py-0.5 rounded font-mono">http://https://dev-mini-project.onrender.com</code>.
           </p>
         </div>
       </div>

@@ -37,11 +37,11 @@ def check_backend_dependencies(python_exe: str):
         subprocess.run([python_exe, "-m", "pip", "install", "-r", str(req_file)], check=True)
 
 def wait_for_backend(timeout_seconds: int = 15) -> bool:
-    print("Waiting for backend to become ready on http://127.0.0.1:8000/api/health ...")
+    print("Waiting for backend to become ready on http://https://dev-mini-project.onrender.com/api/health ...")
     start_time = time.time()
     while time.time() - start_time < timeout_seconds:
         try:
-            req = urllib.request.Request("http://127.0.0.1:8000/api/health")
+            req = urllib.request.Request("http://https://dev-mini-project.onrender.com/api/health")
             with urllib.request.urlopen(req, timeout=1.0) as resp:
                 if resp.status == 200:
                     data = json.loads(resp.read().decode())
@@ -63,7 +63,7 @@ def main():
     check_backend_dependencies(python_exe)
 
     # 1. Start Backend
-    print("\n[1/2] Starting FastAPI Backend on http://127.0.0.1:8000 ...")
+    print("\n[1/2] Starting FastAPI Backend on http://https://dev-mini-project.onrender.com ...")
     backend_cmd = [
         python_exe,
         "-m",
@@ -103,8 +103,8 @@ def main():
     print("\n" + "=" * 65)
     print("Dashboard is LIVE!")
     print("  • Frontend:   http://localhost:5173")
-    print("  • Backend:    http://127.0.0.1:8000")
-    print("  • API Docs:   http://127.0.0.1:8000/docs")
+    print("  • Backend:    http://https://dev-mini-project.onrender.com")
+    print("  • API Docs:   http://https://dev-mini-project.onrender.com/docs")
     print("=" * 65)
     print("\nPress Ctrl+C at any time to shut down both servers.\n")
 

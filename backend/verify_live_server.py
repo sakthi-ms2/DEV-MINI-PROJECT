@@ -40,7 +40,7 @@ def main():
         for i in range(20):
             time.sleep(0.5)
             try:
-                with urllib.request.urlopen("http://127.0.0.1:8000/api/health", timeout=1) as resp:
+                with urllib.request.urlopen("http://https://dev-mini-project.onrender.com/api/health", timeout=1) as resp:
                     if resp.status == 200:
                         data = json.loads(resp.read().decode())
                         if data.get("status") == "ok":
@@ -71,9 +71,9 @@ def main():
             "/api/universities?page=1&page_size=5"
         ]
 
-        print("\nVerifying live endpoints over HTTP (http://127.0.0.1:8000):")
+        print("\nVerifying live endpoints over HTTP (http://https://dev-mini-project.onrender.com):")
         for endpoint in test_urls:
-            url = f"http://127.0.0.1:8000{endpoint}"
+            url = f"http://https://dev-mini-project.onrender.com{endpoint}"
             with urllib.request.urlopen(url, timeout=3) as resp:
                 assert resp.status == 200, f"Failed on {url}: status {resp.status}"
                 body = json.loads(resp.read().decode())
