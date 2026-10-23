@@ -37,11 +37,11 @@ def check_backend_dependencies(python_exe: str):
         subprocess.run([python_exe, "-m", "pip", "install", "-r", str(req_file)], check=True)
 
 def wait_for_backend(timeout_seconds: int = 15) -> bool:
-    print("Waiting for backend to become ready on http://https://dev-mini-project.onrender.com/api/health ...")
+    print("Waiting for backend to become ready on https://dev-mini-project.onrender.com ...")
     start_time = time.time()
     while time.time() - start_time < timeout_seconds:
         try:
-            req = urllib.request.Request("http://https://dev-mini-project.onrender.com/api/health")
+            req = urllib.request.Request("https://dev-mini-project.onrender.com")
             with urllib.request.urlopen(req, timeout=1.0) as resp:
                 if resp.status == 200:
                     data = json.loads(resp.read().decode())

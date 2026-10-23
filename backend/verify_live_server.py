@@ -40,7 +40,7 @@ def main():
         for i in range(20):
             time.sleep(0.5)
             try:
-                with urllib.request.urlopen("http://https://dev-mini-project.onrender.com/api/health", timeout=1) as resp:
+                with urllib.request.urlopen("https://dev-mini-project.onrender.com", timeout=1) as resp:
                     if resp.status == 200:
                         data = json.loads(resp.read().decode())
                         if data.get("status") == "ok":
@@ -56,7 +56,7 @@ def main():
 
         # Test all required endpoints over real HTTP
         test_urls = [
-            "/api/health",
+            "https://dev-mini-project.onrender.com",
             "/api/overview",
             "/api/charts/state-counts",
             "/api/charts/top-states",

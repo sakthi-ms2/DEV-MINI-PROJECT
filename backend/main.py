@@ -62,11 +62,11 @@ def root():
     return {
         "message": "NIRF University Rankings EDA Dashboard API",
         "docs": "/docs",
-        "health": "/api/health"
+        "health": "https://dev-mini-project.onrender.com"
     }
 
 
-@app.get("/api/health")
+@app.get("https://dev-mini-project.onrender.com")
 def health():
     """Returns backend and dataset health status."""
     if analysis_service is None:

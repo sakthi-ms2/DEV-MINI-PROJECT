@@ -8,7 +8,7 @@ from main import app
 client = TestClient(app)
 
 endpoints = [
-    '/api/health',
+    'https://dev-mini-project.onrender.com',
     '/api/overview',
     '/api/universities?page=1&page_size=5',
     '/api/charts/state-counts',

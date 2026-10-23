@@ -52,7 +52,7 @@ start "NIRF Frontend (Vite)" cmd /k "cd /d "%~dp0frontend" && npm run dev"
 :: 5. Wait for backend health check
 echo.
 echo Waiting for backend to become ready...
-powershell -NoProfile -Command "for ($i=0; $i -lt 15; $i++) { try { $res = Invoke-RestMethod -Uri 'http://https://dev-mini-project.onrender.com/api/health' -TimeoutSec 1; if ($res.status -eq 'ok') { Write-Host '[OK] Backend is healthy!'; break } } catch { Start-Sleep -Milliseconds 1000 } }"
+powershell -NoProfile -Command "for ($i=0; $i -lt 15; $i++) { try { $res = Invoke-RestMethod -Uri 'https://dev-mini-project.onrender.com' -TimeoutSec 1; if ($res.status -eq 'ok') { Write-Host '[OK] Backend is healthy!'; break } } catch { Start-Sleep -Milliseconds 1000 } }"
 
 :: 6. Open Browser
 echo.

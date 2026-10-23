@@ -93,8 +93,8 @@ Run the backend and frontend in **two separate Windows PowerShell terminals**.
    ```
 
    The backend will be live at:
-   * API Health Check: [http://https://dev-mini-project.onrender.com/api/health](http://https://dev-mini-project.onrender.com/api/health)
-   * Interactive API Documentation (Swagger): [http://https://dev-mini-project.onrender.com/docs](http://https://dev-mini-project.onrender.com/docs)
+   * API Health Check: [https://dev-mini-project.onrender.com](https://dev-mini-project.onrender.com)
+   * Interactive API Documentation (Swagger): [https://dev-mini-project.onrender.com/docs](http://https://dev-mini-project.onrender.com/docs)
 
 ---
 
