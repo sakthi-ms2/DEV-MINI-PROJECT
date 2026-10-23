@@ -8,7 +8,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://https://dev-mini-project.onrender.com',
+        target: 'https://dev-mini-project.onrender.com',
         changeOrigin: true
       }
     }

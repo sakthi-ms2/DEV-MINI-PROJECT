@@ -107,7 +107,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Direct CSV Download footer */}
         <div className="p-4 border-t border-slate-800/80 bg-slate-950/40">
           <a
-            href="http://https://dev-mini-project.onrender.com/api/export/csv"
+            href="/api/export/csv"
             download="nirf_cleaned_rankings.csv"
             className="w-full flex items-center justify-center space-x-2 px-3 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700/80 text-xs font-semibold text-slate-200 hover:text-white border border-slate-700/60 transition-colors shadow-sm"
           >

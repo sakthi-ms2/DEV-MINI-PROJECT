@@ -13,7 +13,9 @@ import {
   QualityReport
 } from '../types';
 
-const API_BASE = 'https://dev-mini-project.onrender.com/api';
+// Requests go through the same-origin /api proxy (Netlify redirect in production,
+// Vite dev proxy locally), which avoids browser CORS blocks.
+const API_BASE = '/api';
 const DIRECT_API_BASE = 'https://dev-mini-project.onrender.com/api';
 
 async function request<T>(endpoint: string, options?: RequestInit): Promise<T> {
@@ -73,5 +75,5 @@ export const api = {
   getInsights: () => request<InsightsResponse>('/insights'),
   getQualityReport: () => request<QualityReport>('/quality'),
   refreshData: () => request<{ status: string; message: string }>('/refresh', { method: 'POST' }),
-  exportCsvUrl: () => `${DIRECT_API_BASE}/export/csv`
+  exportCsvUrl: () => `${API_BASE}/export/csv`
 };
