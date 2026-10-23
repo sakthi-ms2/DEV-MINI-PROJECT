@@ -14,7 +14,7 @@ import {
 } from '../types';
 
 const API_BASE = '/api';
-const DIRECT_API_BASE = 'http://127.0.0.1:8000/api';
+const DIRECT_API_BASE = 'https://dev-mini-project.onrender.com';
 
 async function request<T>(endpoint: string, options?: RequestInit): Promise<T> {
   let url = `${API_BASE}${endpoint}`;
