@@ -13,8 +13,8 @@ import {
   QualityReport
 } from '../types';
 
-const API_BASE = '/api';
-const DIRECT_API_BASE = 'https://dev-mini-project.onrender.com';
+const API_BASE = 'https://dev-mini-project.onrender.com/api';
+const DIRECT_API_BASE = 'https://dev-mini-project.onrender.com/api';
 
 async function request<T>(endpoint: string, options?: RequestInit): Promise<T> {
   let url = `${API_BASE}${endpoint}`;
